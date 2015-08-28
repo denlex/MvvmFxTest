@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.fontawesome.*?>
+
+<GridPane minWidth="1000.0" prefHeight="700.0" prefWidth="1200.0" stylesheets="@/styles/style.css"
+          xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="org.defence.views.MainView">
+    <children>
+        <TableView fx:id="bookTableView">
+            <columns>
+                <TableColumn fx:id="titleTableColumn" prefWidth="200" text="Наименование"/>
+                <TableColumn fx:id="authorTableColumn" prefWidth="200" text="Автор"/>
+                <TableColumn fx:id="yearTableColumn" prefWidth="200" text="Год издания"/>
+            </columns>
+        </TableView>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS"/>
+    </rowConstraints>
+</GridPane>
