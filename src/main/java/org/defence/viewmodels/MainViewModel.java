@@ -5,10 +5,8 @@ import de.saxsys.mvvmfx.ViewModel;
 import de.saxsys.mvvmfx.utils.commands.Action;
 import de.saxsys.mvvmfx.utils.commands.Command;
 import de.saxsys.mvvmfx.utils.commands.DelegateCommand;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.*;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +17,9 @@ import java.util.List;
 public class MainViewModel implements ViewModel {
 
     public final ListProperty<BookViewModel> books;
+    public final StringProperty title = new SimpleStringProperty();
+    public final StringProperty author = new SimpleStringProperty();
+    public final IntegerProperty year = new SimpleIntegerProperty();
 
     public Command getOkCommand() {
         return okCommand;
@@ -38,7 +39,7 @@ public class MainViewModel implements ViewModel {
 
             @Override
             protected void action() throws Exception {
-                JOptionPane.showMessageDialog(null, "Hello from Ok Button");
+                books.add(new BookViewModel(title.getValue(), author.getValue(), year.getValue()));
             }
         });
     }
